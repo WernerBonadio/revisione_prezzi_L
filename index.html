@@ -124,16 +124,16 @@
             color: #5f6b7a
         }
         .example-btn{
-        display:inline-block;
-        margin-top:8px;
-        font-size:.9rem;
-        padding:8px 12px;
-        border-radius:12px;
-        border:1px solid #d8eaf0;
-        background:#fff;
-        color:#0b5359;
-        font-weight:600;
-        cursor:pointer;
+            display:inline-block;
+            margin-top:8px;
+            font-size:.9rem;
+            padding:8px 12px;
+            border-radius:12px;
+            border:1px solid #d8eaf0;
+            background:#fff;
+            color:#0b5359;
+            font-weight:600;
+            cursor:pointer;
         }
 
         .modal{
@@ -146,20 +146,33 @@
         }
 
         .modal-content{
-        background:white;
-        max-width:760px;
-        max-height:85vh;
-        overflow:auto;
-        margin:5vh auto;
-        padding:24px;
-        border-radius:18px;
+            position:relative;
+            background:white;
+            max-width:760px;
+            max-height:85vh;
+            overflow:auto;
+            margin:5vh auto;
+            padding:48px 24px 24px 24px;
+            border-radius:18px;
         }
 
         .modal-content pre{
-        white-space:pre-wrap;
-        background:#f5f5f5;
-        padding:16px;
-        border-radius:12px;
+            white-space:pre-wrap;
+            background:#f5f5f5;
+            padding:16px;
+            border-radius:12px;
+        }
+
+        .close-x{
+            position:absolute;
+            top:14px;
+            right:18px;
+            border:none;
+            background:transparent;
+            font-size:28px;
+            font-weight:700;
+            cursor:pointer;
+            color:#333;
         }
 
     </style>
@@ -178,7 +191,7 @@
         </header>
 
         <section class="hero">
-            <h2>Revisione Prezzi Lavori</h2>
+            <h2>Strumenti per la Revisione Prezzi Lavori</h2>
             <p>
                 Pagina sperimentale dedicata al supporto per il calcolo della revisione prezzi nei lavori pubblici,
                 con riferimento all’Allegato II.2-bis del D.Lgs. 36/2023 e alle Tabelle A, B e C.
@@ -214,7 +227,7 @@
                     📋 Esempio dati Tabella C         </button>
 
                     <a class="btn green"
-                        href="https://chatgpt.com/g/g-6a15843d83488191b8a6b79bc015ccbd-calcolatore-revisione-prezzi-lavori-tabella-b"
+                        href="https://chatgpt.com/g/g-6a15909930508191b1eee3b5555f8a66-calcolatore-revisione-prezzi-lavori-tabella-c"
                         target="_blank" rel="noopener nofollow">
                     Apri Assistente Tabella C
                 </a>
@@ -240,6 +253,7 @@
     
     <div id="tabellaBExamples" class="modal">
         <div class="modal-content">
+            <button class="close-x" onclick="closeModal('tabellaBExamples')">×</button>
             <h2>Esempi dati per Assistente Tabella B</h2>
     
             <h3>Esempio 1 — Mensile</h3>
@@ -382,6 +396,7 @@
 
     <div id="tabellaCExamples" class="modal">
         <div class="modal-content">
+            <button class="close-x" onclick="closeModal('tabellaCExamples')">×</button>
             <h2>Esempio dati per Assistente Tabella C</h2>
     
             <pre>METODO=TABELLA_C
