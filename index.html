@@ -123,6 +123,45 @@
             border-top: 1px solid #ddd;
             color: #5f6b7a
         }
+        .example-btn{
+        display:inline-block;
+        margin-top:8px;
+        font-size:.9rem;
+        padding:8px 12px;
+        border-radius:12px;
+        border:1px solid #d8eaf0;
+        background:#fff;
+        color:#0b5359;
+        font-weight:600;
+        cursor:pointer;
+        }
+
+        .modal{
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.55);
+        z-index:9999;
+        padding:20px;
+        }
+
+        .modal-content{
+        background:white;
+        max-width:760px;
+        max-height:85vh;
+        overflow:auto;
+        margin:5vh auto;
+        padding:24px;
+        border-radius:18px;
+        }
+
+        .modal-content pre{
+        white-space:pre-wrap;
+        background:#f5f5f5;
+        padding:16px;
+        border-radius:12px;
+        }
+
     </style>
 </head>
 
@@ -155,6 +194,10 @@
                     <h3>1. Assistente Tabella B</h3>
                     <p>Assistente sperimentale per il calcolo della revisione prezzi lavori secondo Tabella B.</p>
                 </div>
+
+                <button class="example-btn" onclick="openModal('tabellaBExamples')">
+                    📋 Esempi dati Tabella B         </button>                
+
                 <a class="btn blue"
                     href="https://chatgpt.com/g/g-6a15843d83488191b8a6b79bc015ccbd-calcolatore-revisione-prezzi-lavori-tabella-b"
                     target="_blank" rel="noopener nofollow">
@@ -167,6 +210,9 @@
                     <h3>2. Assistente Tabella C</h3>
                     <p>Assistente sperimentale per il calcolo della revisione prezzi lavori secondo Tabella C.</p>
                 </div>
+                <button class="example-btn" onclick="openModal('tabellaCExamples')">
+                    📋 Esempio dati Tabella C         </button>
+
                 <a class="btn green" href="#" target="_blank" rel="noopener nofollow">
                     Apri Assistente Tabella C
                 </a>
@@ -189,6 +235,126 @@
             dei criteri applicati e della conformità normativa rimane in capo all’utente.
         </p>
     </div>
+    <div id="tabellaBExamples" class="modal">
+        <div class="modal-content">
+            <h2>Esempi dati per Assistente Tabella B</h2>
+    
+            <h3>Esempio 1 — Mensile</h3>
+            <pre>Metodo: Tabella B
+            Tipo SAL: mensile
+            Periodo aggiudicazione: 2025-07
+            Periodo revisione: 2026-01
+            Importo SAL: 380.000 euro
+            
+            TOL 1 - Peso 40% - Indice aggiudicazione 101,7 - Indice revisione 106,2
+            TOL 5 - Peso 5% - Indice aggiudicazione 99,8 - Indice revisione 104,0
+            TOL 4 - Peso 8% - Indice aggiudicazione 99,2 - Indice revisione 105,5
+            TOL 7 - Peso 24% - Indice aggiudicazione 93,4 - Indice revisione 100,8
+            TOL 14 - Peso 5% - Indice aggiudicazione 103,7 - Indice revisione 108,0
+            TOL 15 - Peso 5% - Indice aggiudicazione 104,1 - Indice revisione 109,0
+            TOL 19 - Peso 13% - Indice aggiudicazione 95,5 - Indice revisione 102,0
+            
+            Espunzione TOL sotto 4%: NO</pre>
+    
+            <h3>Esempio 2 — Mensile con espunzione sotto 4%</h3>
+            <pre>METODO=TABELLAB
+            TIPO_SAL=MENSILE
+            PERIODO_AGGIUDICAZIONE=2025-07
+            PERIODO_REVISIONE=2026-01
+            IMPORTO_SAL=380000
+            ESPUNZIONE_TOL_SOTTO_4=SI
+            REGOLA_ESPUNZIONE=AUTO_TUTTE_SOTTO_4
+            
+            TOL=1
+            PESO=38
+            INDICE_AGGIUDICAZIONE=101.7
+            INDICE_REVISIONE=106.2
+            
+            TOL=5
+            PESO=3
+            INDICE_AGGIUDICAZIONE=99.8
+            INDICE_REVISIONE=104.0
+            
+            TOL=4
+            PESO=8
+            INDICE_AGGIUDICAZIONE=99.2
+            INDICE_REVISIONE=105.5</pre>
+    
+            <h3>Esempio 3 — Plurimensile</h3>
+            <pre>METODO=TABELLAB
+            TIPO_SAL=PLURIMENSILE
+            PERIODO_AGGIUDICAZIONE=2025-07
+            PERIODO_SAL=2025-11:2026-01
+            IMPORTO_SAL=520000
+            ESPUNGI_SOTTO_4=NO
+            
+            TOL=1
+            PESO=40
+            INDICE_AGGIUDICAZIONE=101.7
+            INDICI_REVISIONE=103.5,104.2,105.1
+            
+            TOL=5
+            PESO=5
+            INDICE_AGGIUDICAZIONE=99.8
+            INDICI_REVISIONE=101.0,102.5,103.2</pre>
+    
+            <button onclick="closeModal('tabellaBExamples')">Chiudi</button>
+        </div>
+    </div>
+    
+    <div id="tabellaCExamples" class="modal">
+        <div class="modal-content">
+            <h2>Esempio dati per Assistente Tabella C</h2>
+    
+            <pre>METODO=TABELLA_C
+            PERIODO_AGGIUDICAZIONE=2025-07
+            PERIODO_SAL=2026-01
+            IMPORTO_TOTALE_LAVORI=1000000
+            IMPORTO_SAL=150000
+            
+            TOL_PROGETTO
+            
+            TOL=A
+            IMPORTO_TOL_PROGETTO=500000
+            INDICE_AGGIUDICAZIONE=100
+            INDICE_REVISIONE_PROGETTO=106
+            
+            TOL=B
+            IMPORTO_TOL_PROGETTO=300000
+            INDICE_AGGIUDICAZIONE=100
+            INDICE_REVISIONE_PROGETTO=108
+            
+            TOL=C
+            IMPORTO_TOL_PROGETTO=200000
+            INDICE_AGGIUDICAZIONE=100
+            INDICE_REVISIONE_PROGETTO=102
+            
+            TOL_SAL
+            
+            TOL=A
+            IMPORTO_TOL_SAL=100000
+            INDICE_AGGIUDICAZIONE=100
+            INDICE_REVISIONE_SAL=108
+            
+            TOL=B
+            IMPORTO_TOL_SAL=50000
+            INDICE_AGGIUDICAZIONE=100
+            INDICE_REVISIONE_SAL=110</pre>
+        
+            <button onclick="closeModal('tabellaCExamples')">Chiudi</button>
+        </div>
+    </div>
+    
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+
 </body>
 
 </html>
