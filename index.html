@@ -235,6 +235,7 @@
             dei criteri applicati e della conformità normativa rimane in capo all’utente.
         </p>
     </div>
+    
     <div id="tabellaBExamples" class="modal">
         <div class="modal-content">
             <h2>Esempi dati per Assistente Tabella B</h2>
@@ -246,62 +247,137 @@
             Periodo revisione: 2026-01
             Importo SAL: 380.000 euro
             
-            TOL 1 - Peso 40% - Indice aggiudicazione 101,7 - Indice revisione 106,2
-            TOL 5 - Peso 5% - Indice aggiudicazione 99,8 - Indice revisione 104,0
-            TOL 4 - Peso 8% - Indice aggiudicazione 99,2 - Indice revisione 105,5
-            TOL 7 - Peso 24% - Indice aggiudicazione 93,4 - Indice revisione 100,8
-            TOL 14 - Peso 5% - Indice aggiudicazione 103,7 - Indice revisione 108,0
-            TOL 15 - Peso 5% - Indice aggiudicazione 104,1 - Indice revisione 109,0
-            TOL 19 - Peso 13% - Indice aggiudicazione 95,5 - Indice revisione 102,0
+            TOL progetto:
+            
+            TOL 1
+            Peso: 40%
+            Indice aggiudicazione: 101,7
+            Indice revisione: 106,2
+            
+            TOL 5
+            Peso: 5%
+            Indice aggiudicazione: 99,8
+            Indice revisione: 104,0
+            
+            TOL 4
+            Peso: 8%
+            Indice aggiudicazione: 99,2
+            Indice revisione: 105,5
+            
+            TOL 7
+            Peso: 24%
+            Indice aggiudicazione: 93,4
+            Indice revisione: 100,8
+            
+            TOL 14
+            Peso: 5%
+            Indice aggiudicazione: 103,7
+            Indice revisione: 108,0
+            
+            TOL 15
+            Peso: 5%
+            Indice aggiudicazione: 104,1
+            Indice revisione: 109,0
+            
+            TOL 19
+            Peso: 13%
+            Indice aggiudicazione: 95,5
+            Indice revisione: 102,0
             
             Espunzione TOL sotto 4%: NO</pre>
-    
-            <h3>Esempio 2 — Mensile con espunzione sotto 4%</h3>
-            <pre>METODO=TABELLAB
-            TIPO_SAL=MENSILE
-            PERIODO_AGGIUDICAZIONE=2025-07
-            PERIODO_REVISIONE=2026-01
-            IMPORTO_SAL=380000
-            ESPUNZIONE_TOL_SOTTO_4=SI
-            REGOLA_ESPUNZIONE=AUTO_TUTTE_SOTTO_4
+        
+                <h3>Esempio 2 — Mensile con espunzione sotto 4%</h3>
+                <pre>METODO=TABELLAB
+                TIPO_SAL=MENSILE
+                PERIODO_AGGIUDICAZIONE=2025-07
+                PERIODO_REVISIONE=2026-01
+                IMPORTO_SAL=380000
+                ESPUNZIONE_TOL_SOTTO_4=SI
+                REGOLA_ESPUNZIONE=AUTO_TUTTE_SOTTO_4
+                
+                TOL=1
+                PESO=38
+                INDICE_AGGIUDICAZIONE=101.7
+                INDICE_REVISIONE=106.2
+                
+                TOL=5
+                PESO=3
+                INDICE_AGGIUDICAZIONE=99.8
+                INDICE_REVISIONE=104.0
+                
+                TOL=4
+                PESO=8
+                INDICE_AGGIUDICAZIONE=99.2
+                INDICE_REVISIONE=105.5
+                
+                TOL=7
+                PESO=24
+                INDICE_AGGIUDICAZIONE=93.4
+                INDICE_REVISIONE=100.8
+                
+                TOL=14
+                PESO=3
+                INDICE_AGGIUDICAZIONE=103.7
+                INDICE_REVISIONE=108.0
+                
+                TOL=15
+                PESO=5
+                INDICE_AGGIUDICAZIONE=104.1
+                INDICE_REVISIONE=109.0
+                
+                TOL=19
+                PESO=19
+                INDICE_AGGIUDICAZIONE=95.5
+                INDICE_REVISIONE=102.0</pre>
             
-            TOL=1
-            PESO=38
-            INDICE_AGGIUDICAZIONE=101.7
-            INDICE_REVISIONE=106.2
-            
-            TOL=5
-            PESO=3
-            INDICE_AGGIUDICAZIONE=99.8
-            INDICE_REVISIONE=104.0
-            
-            TOL=4
-            PESO=8
-            INDICE_AGGIUDICAZIONE=99.2
-            INDICE_REVISIONE=105.5</pre>
-    
-            <h3>Esempio 3 — Plurimensile</h3>
-            <pre>METODO=TABELLAB
-            TIPO_SAL=PLURIMENSILE
-            PERIODO_AGGIUDICAZIONE=2025-07
-            PERIODO_SAL=2025-11:2026-01
-            IMPORTO_SAL=520000
-            ESPUNGI_SOTTO_4=NO
-            
-            TOL=1
-            PESO=40
-            INDICE_AGGIUDICAZIONE=101.7
-            INDICI_REVISIONE=103.5,104.2,105.1
-            
-            TOL=5
-            PESO=5
-            INDICE_AGGIUDICAZIONE=99.8
-            INDICI_REVISIONE=101.0,102.5,103.2</pre>
-    
+                    <h3>Esempio 3 — Plurimensile</h3>
+                    <pre>METODO=TABELLAB
+                    TIPO_SAL=PLURIMENSILE
+                    PERIODO_AGGIUDICAZIONE=2025-07
+                    PERIODO_SAL=2025-11:2026-01
+                    IMPORTO_SAL=520000
+                    ESPUNGI_SOTTO_4=NO
+                    
+                    TOL=1
+                    PESO=40
+                    INDICE_AGGIUDICAZIONE=101.7
+                    INDICI_REVISIONE=103.5,104.2,105.1
+                    
+                    TOL=5
+                    PESO=5
+                    INDICE_AGGIUDICAZIONE=99.8
+                    INDICI_REVISIONE=101.0,102.5,103.2
+                    
+                    TOL=4
+                    PESO=8
+                    INDICE_AGGIUDICAZIONE=99.2
+                    INDICI_REVISIONE=101.5,103.0,104.0
+                    
+                    TOL=7
+                    PESO=24
+                    INDICE_AGGIUDICAZIONE=93.4
+                    INDICI_REVISIONE=96.0,97.5,99.0
+                    
+                    TOL=14
+                    PESO=5
+                    INDICE_AGGIUDICAZIONE=103.7
+                    INDICI_REVISIONE=104.5,105.0,106.0
+                    
+                    TOL=15
+                    PESO=5
+                    INDICE_AGGIUDICAZIONE=104.1
+                    INDICI_REVISIONE=105.0,106.5,107.0
+                    
+                    TOL=19
+                    PESO=13
+                    INDICE_AGGIUDICAZIONE=95.5
+                    INDICI_REVISIONE=97.0,98.5,100.0</pre>
+        
             <button onclick="closeModal('tabellaBExamples')">Chiudi</button>
         </div>
     </div>
-    
+
+
     <div id="tabellaCExamples" class="modal">
         <div class="modal-content">
             <h2>Esempio dati per Assistente Tabella C</h2>
