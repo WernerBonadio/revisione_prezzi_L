@@ -152,7 +152,7 @@
             max-height:85vh;
             overflow:auto;
             margin:5vh auto;
-            padding:48px 24px 24px 24px;
+            padding:56px 24px 24px 24px;
             border-radius:18px;
         }
 
@@ -169,10 +169,11 @@
             right:18px;
             border:none;
             background:transparent;
-            font-size:28px;
+            font-size:30px;
             font-weight:700;
             cursor:pointer;
             color:#333;
+            line-height:1;
         }
 
     </style>
@@ -253,7 +254,7 @@
     
     <div id="tabellaBExamples" class="modal">
         <div class="modal-content">
-            <button class="close-x" onclick="closeModal('tabellaBExamples')">×</button>
+            <button class="close-x" onclick="closeModal('tabellaBExamples')" aria-label="Chiudi popup">×</button>
             <h2>Esempi dati per Assistente Tabella B</h2>
     
             <h3>Esempio 1 — Mensile</h3>
@@ -396,7 +397,7 @@
 
     <div id="tabellaCExamples" class="modal">
         <div class="modal-content">
-            <button class="close-x" onclick="closeModal('tabellaCExamples')">×</button>
+            <button class="close-x" onclick="closeModal('tabellaCExamples')" aria-label="Chiudi popup">×</button>
             <h2>Esempio dati per Assistente Tabella C</h2>
     
             <pre>METODO=TABELLA_C
