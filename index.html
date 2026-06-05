@@ -117,6 +117,39 @@
             color: #0b5359
         }
 
+        .advanced-banner {
+            margin: 18px 0;
+            padding: 18px;
+            border: 1px solid #d6e6ff;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(37, 99, 199, .10)
+        }
+
+        .advanced-banner h3 {
+            margin: 0 0 10px 0
+        }
+
+        .advanced-banner p {
+            margin: 8px 0
+        }
+
+        .advanced-btn {
+            background: #2563c7;
+            color: white;
+            box-shadow: 0 0 0 rgba(37, 99, 199, .35);
+            animation: softPulse 2.8s ease-in-out infinite
+        }
+
+        @keyframes softPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 rgba(37, 99, 199, .22)
+            }
+            50% {
+                box-shadow: 0 0 18px rgba(37, 99, 199, .38)
+            }
+        }
+
         .notice {
             margin-top: 24px;
             padding: 16px;
@@ -199,13 +232,34 @@
 
         <section class="hero">
             <h2>Strumenti per la Revisione Prezzi Lavori</h2>
+
+            <a class="btn secondary" href="https://wernerbonadio.github.io/revisione_prezzi_SF/">
+                Vai alla pagina Servizi e Forniture
+            </a>
+
+            <div class="advanced-banner">
+                <h3>🆕 Nuovi strumenti avanzati disponibili per lavori, servizi e forniture</h3>
+                <p>
+                    Estrazione automatica dei dati dai documenti di gara, recupero degli indici ISTAT aggiornati per
+                    servizi, forniture e lavori con TOL e accesso ai calcolatori specialistici.
+                </p>
+                <p>
+                    Con il nuovo Organizer è possibile estrarre i dati dai documenti di gara e recuperare
+                    automaticamente gli indici ISTAT o TOL necessari.
+                </p>
+                <p>
+                    Con Assistant Hub è possibile scegliere il bot specializzato più adatto per il calcolo della
+                    revisione prezzi.
+                </p>
+                <a class="btn advanced-btn" href="https://revisioneprezzi.net">
+                    🚀 Apri RevisionePrezzi.net
+                </a>
+            </div>
             <p>
                 Pagina sperimentale dedicata al supporto per il calcolo della revisione prezzi nei lavori pubblici,
                 con riferimento all’Allegato II.2-bis del D.Lgs. 36/2023 e alle Tabelle A, B e C.
             </p>
-            <a class="btn secondary" href="https://wernerbonadio.github.io/revisione_prezzi_SF/">
-                Vai alla pagina Servizi e Forniture
-            </a>
+
         </section>
 
         <section class="grid">
